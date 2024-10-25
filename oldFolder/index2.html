@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body style="background-color: #212121;color :white">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const Parent = document.querySelector('.parent')
+    // console.log(Parent);
+    const newDay = document.createElement('div');
+    newDay.innerHTML="Friday";
+    newDay.setAttribute("class","day")
+    Parent.appendChild(newDay)
+
+    // function newDaysToAdd(day){
+    //     const newDayToAdd = document.querySelector('div');
+    //     newDayToAdd.appendChild(document.createTextNode(day));
+    //     document.appendChild('.day').appendChild(newDayToAdd)
+    // }
+    // newDaysToAdd("Saturday")
+
+
+    function newDaysToAdd(day){
+        const mainDiv =document.querySelector('.parent')
+        const newDayToAdd = document.querySelector('.day');
+        newDayToAdd.innerHTML = `${day}`;
+        mainDiv.appendChild(newDayToAdd);
+        console.log(mainDiv)
+    }
+    
+    newDaysToAdd("Saturday")
+    newDaysToAdd("Sunday")
+</script>
+</html>

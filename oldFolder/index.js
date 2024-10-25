@@ -132,14 +132,76 @@ console.log('Are you good ??');
 
 
 
+// const promiseOne = new Promise(function(res,rej){
+//     setTimeout(()=>{
+//         let error = true;
+//         if(!error){
+//             console.log("promise solved");
+//             res({username:"Himanshu",password:"123"})
+//         }
+//         else{
+//             rej("Something went wrong");
+//         }
+//     },1000)
+// })
+// .then((user)=>{
+//     console.log(user);
+//     console.log(user.username);
+//     console.log("promise consumed");
+// })
+// .catch((error)=>{
+//     console.log("Error");
+// })
+
+// async function getInfo(){
+//     try{
+//         const response = await fetch('https://api.github.com/users/ihshar');
+//         const data = await response.json(); 
+//         console.log(data);
+//     }
+//     catch(err){
+//         console.log("E:",err);
+//     }
+// }
+
+// getInfo();
+
+// const promiseThree = new Promise(function(res,rej){
+//     const data = fetch('https://api.github.com/users/ihshar');
+//     res(data);
+// })
+// .then((data)=>{
+//     return data.json();
+// })
+// .then((data)=>{
+//     console.log(data.followers);
+// })
+// .catch((err)=>{
+//    console.log(err);
+// })
 
 
+// const promiseFour = new Promise(function(res,rej){
+//     const data = fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@2024-03-06/v1/currencies/inr.json')
+//     console.log(data);
+//     console.log(typeof data);
+//     res(data)
+// })
+// .then((res)=>{
+//     const data = res.json()
+//     console.log(typeof data);
+//     console.log("Here");
+// })
+// .catch((err)=> console.log(err))
 
 
+const useInfo = {
+    name:"Himanshu",
+    "password":123,
+}
 
-
-
-
-
-
-
+console.log(typeof useInfo)
+console.log(useInfo.name)
+console.log(typeof useInfo.name)
+console.log(useInfo["password"])
+console.log(typeof useInfo["password"])

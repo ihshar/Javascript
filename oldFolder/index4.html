@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>|| Code ||</title>
+</head>
+<body>
+    <h1>Hello Sir!</h1>
+    <button id="startbutton">Start</button>
+    <button id="stopbutton">Stop</button>
+
+</body>
+<script>
+    const startbutton = document.querySelector('#startbutton');
+    const stopbutton = document.querySelector('#stopbutton');
+
+
+    const startHello = ()=>{
+        console.log("printing started");
+    }
+
+
+    startbutton.addEventListener('click',()=>{
+        const interval_id = setInterval(startHello,1000)
+        stopbutton.addEventListener('click',()=>{
+            clearInterval(interval_id)
+        })
+    })
+
+
+
+
+
+</script>
+</html>
