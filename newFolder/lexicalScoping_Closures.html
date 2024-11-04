@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body style="background: #313131;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+    <script>
+        // LEXICAL scope - the inner function can have access of outer function properties/varaible and methods
+        // function init(){
+        //     let username = "Himanshu"
+        //     function inner(){
+        //         // let username  = "Honey"
+        //         console.log("Inner",username);
+        //     }
+        //     function innerTwo(){
+        //         console.log("InnerTwo:",username);
+        //     }
+        //     inner()
+        //     innerTwo()
+        // }
+        // init()
+
+
+        // CLOSURE - when the full inner function is returned then just not inner function but the Lexical Scope(lexical scope is the variable and methods outside the inner function) of inner function is returned
+        // function makeFun(username){
+        //     const name = "Mozilla"
+        //     this.username = username;
+        //     function displayName(){
+        //         console.log(name);
+        //         console.log(this.username);
+        //     }
+        //     return displayName;
+        // }
+
+        // const myFunc = makeFun("himanshu")
+        // myFunc();
+    </script>
+
+    <script>
+        // document.querySelector('#orange').onclick = function(){
+        //     document.body.style.backgroundColor = "orange"
+        // }
+        
+        // document.querySelector('#green').onclick = function(){
+        //     document.body.style.backgroundColor = "green"
+        // }
+
+        function clickHandler(color){
+            return function(){
+                document.body.style.backgroundColor=`${color}`
+            }
+        }
+
+        document.querySelector('#orange').onclick = clickHandler("orange") // so onclick take a reference of function(clickHandler) 
+        document.querySelector('#green').onclick = clickHandler("green") // here clickHandler is returning a function because of closure it's working
+        // color has access to inner function that is because of lexical scoping and because of closure the whole lexical scoping is returned in clickHandler 
+        
+    </script>
+</body>
+</html>
