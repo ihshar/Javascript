@@ -150,17 +150,52 @@ function getInfo(){
 
 // new method of classes ES6 or later
 
-class Person{
-    constructor(name,age){
-        this.name = name;
-        this.age = age;
-    }
+// class Person{
+//     constructor(name,age){
+//         this.name = name;
+//         this.age = age;
+//     }
 
-    sayHello(){
-        console.log(`Hii from ${this.name} of age ${this.age}`);
-    }
+//     sayHello(){
+//         console.log(`Hii from ${this.name} of age ${this.age}`);
+//     }
+// }
+
+// const Himanshu = new Person("Himanshu",24)
+// Himanshu.sayHello()
+// console.log(Himanshu);
+
+
+const promise = new Promise((res,rej)=>{
+    document.querySelector('#resolve').addEventListener('click',()=>{
+        res("resolved")
+    })
+    
+    document.querySelector('#reject').addEventListener('click',()=>{
+        rej("Rejected")
+    })
+
+})
+.then((res)=>console.log(res))
+.catch((rej)=>{console.log(rej)})
+
+
+
+
+
+// async function promiseFunc(){
+//     console.log("pending");
+//     const btn = await document.querySelector('button').addEventListener('click',()=>{
+//         console.log("resolved");
+//     })
+// }  
+// promiseFunc();
+
+
+async function MyFunc(){
+    const res = await promise
+    return "Himanshu";
 }
 
-const Himanshu = new Person("Himanshu",24)
-Himanshu.sayHello()
-console.log(Himanshu);
+const res = await MyFunc()
+console.log(res);
